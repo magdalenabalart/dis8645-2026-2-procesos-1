@@ -11,7 +11,7 @@ Para esta tarea partí desde el ejemplo base visto en clases y fui agregando los
 Primero agregué un segundo botón en la simulación de Wokwi. Usé la imagen del pinout de la Raspberry Pi Pico para ubicar los GPIO disponibles y conectar correctamente cada componente. El primer botón quedó conectado al GPIO 7 y el segundo al GPIO 8. También agregué un LED conectado al GPIO 15.
 En main.cpp trabajé copiando la misma lógica que ya tenía el ejemplo del primer botón. Creé una segunda instancia de la clase Boton:
 
-![Simulación en Wokwi](./imagenes/encargo_07.png) 
+![Simulación en Wokwi](./imagenes/encargo-07.png) 
 
 https://wokwi.com/projects/477136488395400193
 
