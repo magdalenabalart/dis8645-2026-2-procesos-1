@@ -19,7 +19,7 @@ jobs:
 
       - name: Ejecutar action
         id: nombres
-        uses: piruetasxyz/arreglador-nombres-archivos@v0.2.3
+        uses: piruetasxyz/arreglador-nombres-archivos@v0.2.5
         with:
           arreglar: true
 

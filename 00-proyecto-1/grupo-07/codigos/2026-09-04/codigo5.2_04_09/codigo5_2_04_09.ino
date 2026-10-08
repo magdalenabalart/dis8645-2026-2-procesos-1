@@ -14,7 +14,7 @@
 #include <Adafruit_SSD1306.h>  // Librería específica para el chip controlador SSD1306 de la OLED
 #include <string.h>            // Funciones para manejar texto: strlen, strcpy, strtok, strcmp
 #include <ctype.h>             // Funciones para clasificar/transformar caracteres: isalpha, tolower
-#include "animacionLlamas.h"   // NUEVO: framesLlamas[], numFramesLlamas, frameDelayLlamas
+#include "Animacionllamas.h"   // NUEVO: framesLlamas[], numFramesLlamas, frameDelayLlamas
 
 // Definimos el tamaño de la pantalla en píxeles (ancho x alto)
 #define SCREEN_WIDTH 128

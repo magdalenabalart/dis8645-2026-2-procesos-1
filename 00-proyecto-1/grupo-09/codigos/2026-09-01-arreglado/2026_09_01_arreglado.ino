@@ -21,7 +21,7 @@ const int ledPin = 9;         // LED pin
 
 // 4. DATOS VISUALES
 // Aquí estamos llamando al código donde tenemos los cuadros de la animación
-#include "cuadros.h"
+#include "Cuadros.h"
 
 
 // TEXTOS DEL PROYECTO

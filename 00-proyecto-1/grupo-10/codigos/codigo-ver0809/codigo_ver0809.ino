@@ -12,10 +12,10 @@
 #include <Fonts/FreeSerifItalic9pt7b.h>
 
 //carpeta animación pluma
-#include "animacion.h"
+#include "Animacion.h"
 
 //carpeta animación pollo
-#include "pollo.h"
+#include "Pollo.h"
 
 //definir el tipo de pantalla que estamos usando
 #define SCREEN_WIDTH 128

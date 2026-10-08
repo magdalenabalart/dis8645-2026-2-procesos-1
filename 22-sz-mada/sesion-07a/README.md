@@ -146,6 +146,59 @@ int main() {
 ## encargos
 
 1. usar el ejemplo base visto en clases <https://wokwi.com/projects/476507507193136129>, agregar un segundo botón en la simulación de hardware, agregar una segunda instancia de la clase Boton, agregarle un atributo y un método a la clase Boton, y hacer que el segundo botón haga algo diferente al primero.
+
+Lo que decidí hacer para el segundo botón, fue agregarle un contador. Mi idea fue que al presionar el segundo botón, el botón dice algo como "me presionaron n veces"
+
+### Boton.h
+
+Como atributo, añadí la línea `uint8_t vecesPresionado = 0;`. Opté por usar `uint8_t` en vez de `int` porque un contador si o si es números enteros positivos, y ya que solo quise probar con una cantidad pequeña en cuanto a cuántas presiones iba a leer antes de reiniciarse, 8 bit fue suficiente
+
+Para métodos, añadí un auto-reset. `void reiniciarContador();` para hacer que el botón reinicie el contador por cuenta propia, en lugar de algún input externo al botón
+
+### Boton.cpp
+
+En la sección de `void Boton::leer() {` añadí un boolean para recordar el estado anterior del botón `bool estabaPresionado = Boton::presionado;`
+
+Luego está la línea escrita durante la clase en la que lee el estado actual del botón, después de esta añadí el contador en sí, que lea cada presión del botón como una instancia individual
+
+```cpp
+if (Boton::presionado && !estabaPresionado) {
+  Boton::vecesPresionado++;
+}
+```
+
+En estas líneas tuve que usar el operador NOT ( ! ) para que lo lea como "si el botón está presionado ahora y NO estaba presionado antes"
+
+Y en los métodos, hice que el contador pueda ser reiniciado a cero
+
+```cpp
+void Boton::reiniciarContador() {
+  Boton::vecesPresionado = 0;
+}
+```
+
+### main.cpp
+
+Finalmente, solo quedó incluir estos cambios en el código principal. Durante la clase, dupliqué el botón (miSegundoBoton) e hice que diera un diálogo aparte al ser presionado, así podía diferenciar entre cuando miPrimerBoton y miSegundoBoton están siendo presionados
+
+En el `printf` del segundo botón presionado, cambié mi indicador textual de que está siendo presionado a que directamente diga cuántas veces lo han presionado
+
+```cpp
+if (miSegundoBoton.presionado) {
+  printf ("me presionaron %d veces\n",
+  miSegundoBoton.vecesPresionado);
+}
+```
+
+Luego al final de `while(true)`, escribí que el contador se reinicie al llegar a 5 presiones, una cantidad pequeña para fácilmente asegurarme que el código esté funcionando as intended
+
+```cpp
+if (miSegundoBoton.vecesPresionado >= 5) {
+  printf("me presionaron 5 veces, me reinicio\n");
+  miSegundoBoton.reiniciarContador();
+}
+```
+
 2. descargar todos los archivos de wokwi, descomprimir el archivo.zip y subir esa carpeta a tu repositorio en esta sesión.
 
 ## lectura
