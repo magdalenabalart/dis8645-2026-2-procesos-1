@@ -13,6 +13,8 @@ En main.cpp trabajé copiando la misma lógica que ya tenía el ejemplo del prim
 
 ![Simulación en Wokwi](imagen1.png)
 
+https://wokwi.com/projects/477136488395400193
+
 ```cpp
 Boton miPrimerBoton(7);
 Boton miSegundoBoton(8);
